@@ -128,7 +128,9 @@ Build a **production-grade monolithic e-commerce backend** using:
 ```bash
 ./mvnw spring-boot:run
 
----
+```
+
+
 
 ## Software Development Principles to be followed
 - SOLID
@@ -136,9 +138,10 @@ Build a **production-grade monolithic e-commerce backend** using:
 - DRY
 - YAGNI
 
----
+
 
 ## Design Patterns
 
 - Used Builder pattern by using Lombok in entities and DTOs.
 - More Patterns to be used in future.
+
