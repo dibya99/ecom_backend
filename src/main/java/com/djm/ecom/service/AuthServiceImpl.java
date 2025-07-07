@@ -1,6 +1,7 @@
 package com.djm.ecom.service;
 
 import com.djm.ecom.dto.RegisterRequest;
+import com.djm.ecom.dto.RegisterResponse;
 import com.djm.ecom.entity.User;
 import com.djm.ecom.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class AuthServiceImpl implements AuthService {
         this.userRepository = userRepository;
     }
 
-    public User register(RegisterRequest registerRequest)
+    public RegisterResponse register(RegisterRequest registerRequest)
     {
         User user = User.builder()
                 .firstName(registerRequest.getFirstName())
@@ -24,8 +25,13 @@ public class AuthServiceImpl implements AuthService {
                 .email(registerRequest.getEmail())
                 .password(registerRequest.getPassword())
                 .build();
-        user = userRepository.save(user);
-        return user;
+        User savedUser = userRepository.save(user);
+        return RegisterResponse.builder()
+                .userId(savedUser.getUserId())
+                .firstName(savedUser.getFirstName())
+                .lastName(savedUser.getLastName())
+                .email(savedUser.getEmail())
+                .build();
 
     }
 }

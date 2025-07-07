@@ -143,5 +143,6 @@ Build a **production-grade monolithic e-commerce backend** using:
 ## Design Patterns
 
 - Used Builder pattern by using Lombok in entities and DTOs.
+- Used Singleton design pattern. It is supported by springboot using @Autowired annotation
 - More Patterns to be used in future.
 

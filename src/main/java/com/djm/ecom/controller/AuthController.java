@@ -1,6 +1,7 @@
 package com.djm.ecom.controller;
 
 import com.djm.ecom.dto.RegisterRequest;
+import com.djm.ecom.dto.RegisterResponse;
 import com.djm.ecom.entity.User;
 import com.djm.ecom.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody RegisterRequest registerRequest) {
-        User createdUser = authService.register(registerRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
+    public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest registerRequest) {
+        RegisterResponse registerResponse = authService.register(registerRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(registerResponse);
     }
 }
