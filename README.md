@@ -117,6 +117,7 @@ Build a **production-grade monolithic e-commerce backend** using:
 ## ✅ Completed So Far
 
 - [x] **US-1:** Register user via `POST /api/auth/register`
+-    [X] **US-1.1** Added a global exception handler and a proper error DTO
 - [ ] US-2: Email duplication check
 - [ ] US-3: Login and JWT
 - [ ] Remaining user stories & APIs in progress...
@@ -136,7 +137,9 @@ Build a **production-grade monolithic e-commerce backend** using:
 - SOLID
 - KISS
 - DRY
+  - Used a global exception handler to reduce multiple handlers in different controllers.
 - YAGNI
+
 
 
 
