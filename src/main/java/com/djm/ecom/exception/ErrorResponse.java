@@ -2,6 +2,8 @@ package com.djm.ecom.exception;
 
 import lombok.*;
 
+import java.util.Map;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -10,4 +12,5 @@ import lombok.*;
 public class ErrorResponse {
     private int statusCode;
     private String message;
+    private Map<String, String> errors;
 }

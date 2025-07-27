@@ -4,6 +4,7 @@ import com.djm.ecom.dto.RegisterRequest;
 import com.djm.ecom.dto.RegisterResponse;
 import com.djm.ecom.entity.User;
 import com.djm.ecom.service.AuthService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest registerRequest) {
+    public ResponseEntity<RegisterResponse> register(@Valid  @RequestBody RegisterRequest registerRequest) {
         RegisterResponse registerResponse = authService.register(registerRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(registerResponse);
     }
