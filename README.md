@@ -119,6 +119,7 @@ Build a **production-grade monolithic e-commerce backend** using:
 - [X] **US-1:** Register user via `POST /api/auth/register`
   - [X] **US-1.1** Added a global exception handler and a proper error DTO
   - [X] **US-1.2** Added validations in request DTO and added exception handling in GlobalExceptionHandler
+  - [X] **US-1.3** Added logging and aspects
 - [ ] US-2: Email duplication check
 - [ ] US-3: Login and JWT
 - [ ] Remaining user stories & APIs in progress...
