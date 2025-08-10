@@ -3,6 +3,7 @@ package com.djm.ecom.service;
 import com.djm.ecom.dto.RegisterRequest;
 import com.djm.ecom.dto.RegisterResponse;
 import com.djm.ecom.entity.User;
+import com.djm.ecom.exception.EmailAlreadyExistsException;
 import com.djm.ecom.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class AuthServiceImpl implements AuthService {
 
     public RegisterResponse register(RegisterRequest registerRequest)
     {
+
+        if(userRepository.existsByEmail(registerRequest.getEmail()))
+            throw new EmailAlreadyExistsException("Another account registered with same email");
+
         User user = User.builder()
                 .firstName(registerRequest.getFirstName())
                 .lastName(registerRequest.getLastName())

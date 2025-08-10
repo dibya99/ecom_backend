@@ -30,6 +30,15 @@ public class GlobalExceptionHandler {
 
     }
 
+    @ExceptionHandler(EmailAlreadyExistsException.class)
+    ResponseEntity<ErrorResponse> handleEmailAlreadyExistsException(EmailAlreadyExistsException exception) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .statusCode(HttpStatus.CONFLICT.value())
+                .message(exception.getMessage())
+                .build();
+        return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
+    }
+
     @ExceptionHandler(Exception.class)
     ResponseEntity<ErrorResponse> handleGeneralException(Exception exception) {
         ErrorResponse errorResponse = ErrorResponse.builder()
