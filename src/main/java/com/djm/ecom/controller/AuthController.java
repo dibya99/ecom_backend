@@ -32,4 +32,6 @@ public class AuthController {
         RegisterResponse registerResponse = authService.register(registerRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(registerResponse);
     }
+
+
 }
