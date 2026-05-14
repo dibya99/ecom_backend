@@ -2,6 +2,7 @@ package com.djm.ecom.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -38,6 +39,18 @@ public class GlobalExceptionHandler {
                 .build();
         return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
     }
+
+    @ExceptionHandler(AuthenticationException.class)
+    ResponseEntity<ErrorResponse> handleAuthenticationException(AuthenticationException authenticationException)
+    {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .statusCode(HttpStatus.UNAUTHORIZED.value())
+                .message(authenticationException.getMessage())
+                .build();
+        return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
+    }
+
+
 
     @ExceptionHandler(Exception.class)
     ResponseEntity<ErrorResponse> handleGeneralException(Exception exception) {

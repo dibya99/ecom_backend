@@ -1,12 +1,17 @@
 package com.djm.ecom.service;
 
+import com.djm.ecom.dto.LoginRequest;
+import com.djm.ecom.dto.LoginResponse;
 import com.djm.ecom.dto.RegisterRequest;
 import com.djm.ecom.dto.RegisterResponse;
 import com.djm.ecom.entity.Role;
 import com.djm.ecom.entity.User;
 import com.djm.ecom.exception.EmailAlreadyExistsException;
 import com.djm.ecom.repository.UserRepository;
+import com.djm.ecom.security.JwtService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +20,15 @@ public class AuthServiceImpl implements AuthService {
 
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
+    private AuthenticationManager authenticationManager;
+    private JwtService jwtService;
 
     @Autowired
-    public AuthServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public AuthServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager, JwtService jwtService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.authenticationManager = authenticationManager;
+        this.jwtService = jwtService;
     }
 
     public RegisterResponse register(RegisterRequest registerRequest) {
@@ -43,4 +52,13 @@ public class AuthServiceImpl implements AuthService {
                 .build();
 
     }
+
+    public LoginResponse login(LoginRequest loginRequest) {
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken
+                (loginRequest.getEmail(), loginRequest.getPassword()));
+        String token = jwtService.generateToken(loginRequest.getEmail());
+        return LoginResponse.builder().token(token).build();
+    }
+
+
 }

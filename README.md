@@ -121,7 +121,7 @@ Build a **production-grade monolithic e-commerce backend** using:
   - [X] **US-1.2** Added validations in request DTO and added exception handling in GlobalExceptionHandler
   - [X] **US-1.3** Added logging and aspects
 - [X] US-2: Email duplication check
-- [ ] US-3: Login and JWT
+- [X] US-3: Login and JWT
 - [X] US-4: User has have user role by default
 - [ ] Remaining user stories & APIs in progress...
 
