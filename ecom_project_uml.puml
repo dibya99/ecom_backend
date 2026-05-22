@@ -1,0 +1,140 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class EcomApplication {
+}
+
+class LoggingAspect {
+  + serviceLayer()
+  + controllerLayer()
+  + logBeforeController()
+  + logBeforeService()
+  + logAfterReturning()
+  + logAfterThrowing()
+}
+
+class SecurityConfig {
+  - jwtAuthenticationEntryPoint : JwtAuthenticationEntryPoint
+  - jwtAuthenticationFilter : JwtAuthenticationFilter
+
+  + passwordEncoder()
+  + securityFilterChain()
+  + authenticationManager()
+}
+
+class AuthController {
+  - authService : AuthService
+
+  + register()
+  + login()
+  + me()
+}
+
+class LoginRequest {
+  - email : String
+  - password : String
+
+}
+
+class LoginResponse {
+  - token : String
+
+}
+
+class RegisterRequest {
+  - firstName : String
+  - lastName : String
+  - email : String
+  - password : String
+
+}
+
+class RegisterResponse {
+  - userId : int
+  - firstName : String
+  - lastName : String
+  - email : String
+
+}
+
+class User {
+  - userId : int
+  - firstName : String
+  - lastName : String
+  - email : String
+  - password : String
+  - role : Role
+
+}
+
+class EmailAlreadyExistsException {
+}
+
+class ErrorResponse {
+  - statusCode : int
+  - message : String
+
+}
+
+class GlobalExceptionHandler {
+}
+
+class UserRepository {
+}
+
+class CustomUserDetailsService {
+  - userRepository : UserRepository
+
+  + loadUserByUsername()
+}
+
+class JwtAuthenticationEntryPoint {
+  - objectMapper : ObjectMapper
+
+  + commence()
+}
+
+class JwtAuthenticationFilter {
+  - jwtService : JwtService
+  - customUserDetailsService : CustomUserDetailsService
+
+  # doFilterInternal()
+}
+
+class JwtService {
+  - secret : String
+
+  + generateToken()
+  - getSignInKey()
+  - extractAllClaims()
+  - isTokenExpired()
+  + extractUsername()
+  + isTokenValid()
+}
+
+class AuthService {
+}
+
+class AuthServiceImpl {
+  - userRepository : UserRepository
+  - passwordEncoder : PasswordEncoder
+  - authenticationManager : AuthenticationManager
+  - jwtService : JwtService
+
+  + register()
+  + login()
+}
+
+class EcomApplicationTests {
+}
+
+SecurityConfig --> JwtAuthenticationEntryPoint
+SecurityConfig --> JwtAuthenticationFilter
+AuthController --> AuthService
+CustomUserDetailsService --> UserRepository
+JwtAuthenticationFilter --> JwtService
+JwtAuthenticationFilter --> CustomUserDetailsService
+AuthServiceImpl --> UserRepository
+AuthServiceImpl --> JwtService
+
+@enduml

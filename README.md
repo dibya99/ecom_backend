@@ -123,6 +123,7 @@ Build a **production-grade monolithic e-commerce backend** using:
 - [X] US-2: Email duplication check
 - [X] US-3: Login and JWT
 - [X] US-4: User has have user role by default
+- [X] US-5: As an admin, I want to create new products.
 - [ ] Remaining user stories & APIs in progress...
 
 ---

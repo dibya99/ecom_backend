@@ -38,10 +38,5 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.OK).body(loginResponse);
     }
 
-    @GetMapping("/me")
-    public String me() {
-        return "You are authenticated";
-    }
-
 
 }

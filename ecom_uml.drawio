@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36">
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
-    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3042" dy="1784" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -220,17 +220,35 @@
         <mxCell id="9Pm35QQOEu1HEdc9xBvz-15" parent="9Pm35QQOEu1HEdc9xBvz-11" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;horizontal=1;" value="" vertex="1">
           <mxGeometry height="8" width="240" y="26" as="geometry" />
         </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-21" edge="1" parent="1" source="kb7ifpMeaoZ1mUsA60Gp-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="TatYbCm4kVdzZep3-uSK-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-22" edge="1" parent="1" source="kb7ifpMeaoZ1mUsA60Gp-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="TatYbCm4kVdzZep3-uSK-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="kb7ifpMeaoZ1mUsA60Gp-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;class SecurityConfig&lt;/font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="174" width="290" x="25" y="1008" as="geometry" />
+          <mxGeometry height="322" width="290" x="25" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-4" parent="kb7ifpMeaoZ1mUsA60Gp-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;- jwtAuthenticationFilter: JwtAuthenticationFilter&amp;nbsp;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="24" width="290" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-3" parent="kb7ifpMeaoZ1mUsA60Gp-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;- jwtAuthenticationEntryPoint: JwtAuthenticationEntryPoint&lt;/b&gt;" vertex="1">
+          <mxGeometry height="10" width="290" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-19" parent="kb7ifpMeaoZ1mUsA60Gp-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;horizontal=1;" vertex="1">
+          <mxGeometry height="84" width="290" y="60" as="geometry" />
         </mxCell>
         <mxCell id="hi34t5aLPHFQMeDPnebB-1" parent="kb7ifpMeaoZ1mUsA60Gp-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;horizontal=1;" vertex="1">
-          <mxGeometry height="84" width="290" y="26" as="geometry" />
+          <mxGeometry height="84" width="290" y="144" as="geometry" />
+        </mxCell>
+        <mxCell id="kb7ifpMeaoZ1mUsA60Gp-31" parent="kb7ifpMeaoZ1mUsA60Gp-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;+securityFilterChain(HttpSecurity) :SecurityFilterChain&lt;/b&gt;" vertex="1">
+          <mxGeometry height="30" width="290" y="228" as="geometry" />
         </mxCell>
         <mxCell id="apspi2VWLHMlF0YZw5mh-1" parent="kb7ifpMeaoZ1mUsA60Gp-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;horizontal=1;" value="+ passwordEncoder():PasswordEncoder" vertex="1">
-          <mxGeometry height="34" width="290" y="110" as="geometry" />
+          <mxGeometry height="34" width="290" y="258" as="geometry" />
         </mxCell>
         <mxCell id="kb7ifpMeaoZ1mUsA60Gp-32" parent="kb7ifpMeaoZ1mUsA60Gp-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;+authenticationManager(AuthenticationConfiguration config) : AuthenticationManager&lt;/b&gt;" vertex="1">
-          <mxGeometry height="30" width="290" y="144" as="geometry" />
+          <mxGeometry height="30" width="290" y="292" as="geometry" />
         </mxCell>
         <mxCell id="kb7ifpMeaoZ1mUsA60Gp-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;enum Role&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="86" width="220" x="60" y="443" as="geometry" />
@@ -271,9 +289,6 @@
         </mxCell>
         <mxCell id="kb7ifpMeaoZ1mUsA60Gp-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;+loadUserByUsername(email : String): UserDetails&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="240" x="365" y="1124" as="geometry" />
-        </mxCell>
-        <mxCell id="kb7ifpMeaoZ1mUsA60Gp-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;+securityFilterChain(HttpSecurity) :SecurityFilterChain&lt;/b&gt;" vertex="1">
-          <mxGeometry height="30" width="200" x="45" y="1088" as="geometry" />
         </mxCell>
         <mxCell id="apspi2VWLHMlF0YZw5mh-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 46px;&quot;&gt;MVC&lt;/font&gt;" vertex="1">
           <mxGeometry height="80" width="300" x="380" y="-320" as="geometry" />
@@ -328,6 +343,33 @@
         </mxCell>
         <mxCell id="apspi2VWLHMlF0YZw5mh-29" parent="apspi2VWLHMlF0YZw5mh-25" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;-getSignInKey(): Key&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="250" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;class&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-size: 14px;&quot;&gt;JwtAuthenticationEntryPoint&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="520" x="-690" y="1054" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-9" parent="TatYbCm4kVdzZep3-uSK-7" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;horizontal=1;" value="" vertex="1">
+          <mxGeometry height="14" width="520" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-12" parent="TatYbCm4kVdzZep3-uSK-7" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;+commence(request: HttpServletRequest, response : HttpServletResponse,&lt;/b&gt;&lt;div&gt;&lt;b&gt;authException:AuthenticationException): null&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="520" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-14" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=default;fontFamily=Helvetica;fontSize=12;fontColor=default;fillColor=default;" value="&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;class&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-size: 14px;&quot;&gt;JwtAuthenticationFilter&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="280" width="450" x="-150" y="1340" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-18" parent="TatYbCm4kVdzZep3-uSK-14" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;-jwtService: JwtService&lt;/b&gt;&lt;div&gt;&lt;b&gt;-&lt;/b&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt; customUserDetailsService :&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&lt;b&gt;CustomUserDetailsService&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="450" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-15" parent="TatYbCm4kVdzZep3-uSK-14" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Helvetica;fontSize=12;fontColor=default;fontStyle=1;horizontal=1;" value="" vertex="1">
+          <mxGeometry height="14" width="450" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-16" parent="TatYbCm4kVdzZep3-uSK-14" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;+doFilterInternal(request: HttpServletRequest, response : HttpServletResponse,&lt;/b&gt;&lt;div&gt;&lt;b&gt;authException:AuthenticationException, &lt;br&gt;filterChain: FilterChain): null&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="450" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-24" edge="1" parent="1" source="TatYbCm4kVdzZep3-uSK-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="kb7ifpMeaoZ1mUsA60Gp-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TatYbCm4kVdzZep3-uSK-25" edge="1" parent="1" source="TatYbCm4kVdzZep3-uSK-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="apspi2VWLHMlF0YZw5mh-29">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
