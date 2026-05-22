@@ -955,3 +955,468 @@ java.lang.NullPointerException: Cannot invoke "com.djm.ecom.repository.ProductRe
 2026-05-22 20:21:17 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-22 20:21:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-05-22 20:21:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-22 20:23:34 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 24028 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 20:23:34 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 20:23:34 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-22 20:23:34 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-22 20:23:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22 20:23:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 2 JPA repository interfaces.
+2026-05-22 20:23:36 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-22 20:23:36 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-22 20:23:36 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-22 20:23:36 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-22 20:23:36 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1569 ms
+2026-05-22 20:23:36 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-22 20:23:36 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+2026-05-22 20:23:36 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-22 20:23:37 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22 20:23:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-22 20:23:37 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16950e4
+2026-05-22 20:23:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-22 20:23:37 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22 20:23:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22 20:23:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:23:38 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-05-22 20:23:38 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-22 20:23:39 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-05-22 20:23:39 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-22 20:23:39 INFO  com.djm.ecom.EcomApplication - Started EcomApplication in 5.454 seconds (process running for 5.795)
+2026-05-22 20:23:46 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-22 20:23:46 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-22 20:23:46 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-22 20:23:47 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10)]
+2026-05-22 20:23:47 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10)]
+2026-05-22 20:23:47 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10)
+2026-05-22 20:23:47 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10),[]>
+2026-05-22 20:24:09 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.HttpEntity<com.djm.ecom.dto.ProductCreationResponse> com.djm.ecom.controller.AdminProductController.createProduct(com.djm.ecom.dto.ProductCreationRequest): [Field error in object 'productCreationRequest' on field 'price': rejected value [79999.999]; codes [Digits.productCreationRequest.price,Digits.price,Digits.java.math.BigDecimal,Digits]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productCreationRequest.price,price]; arguments []; default message [price],2,10]; default message [Invalid price format]] ]
+2026-05-22 20:24:17 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.HttpEntity<com.djm.ecom.dto.ProductCreationResponse> com.djm.ecom.controller.AdminProductController.createProduct(com.djm.ecom.dto.ProductCreationRequest): [Field error in object 'productCreationRequest' on field 'quantity': rejected value [-2]; codes [Min.productCreationRequest.quantity,Min.quantity,Min.int,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productCreationRequest.quantity,quantity]; arguments []; default message [quantity],0]; default message [Quantity cannot be negative]] ]
+2026-05-22 20:24:23 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.HttpEntity<com.djm.ecom.dto.ProductCreationResponse> com.djm.ecom.controller.AdminProductController.createProduct(com.djm.ecom.dto.ProductCreationRequest) with 2 errors: [Field error in object 'productCreationRequest' on field 'price': rejected value [79999.999]; codes [Digits.productCreationRequest.price,Digits.price,Digits.java.math.BigDecimal,Digits]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productCreationRequest.price,price]; arguments []; default message [price],2,10]; default message [Invalid price format]] [Field error in object 'productCreationRequest' on field 'quantity': rejected value [-2]; codes [Min.productCreationRequest.quantity,Min.quantity,Min.int,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [productCreationRequest.quantity,quantity]; arguments []; default message [quantity],0]; default message [Quantity cannot be negative]] ]
+2026-05-22 20:30:25 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20)]
+2026-05-22 20:30:25 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20)]
+2026-05-22 20:30:25 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20)
+2026-05-22 20:30:25 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20),[]>
+2026-05-22 20:30:33 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8)]
+2026-05-22 20:30:33 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8)]
+2026-05-22 20:30:33 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8)
+2026-05-22 20:30:33 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8),[]>
+2026-05-22 20:30:38 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25)]
+2026-05-22 20:30:38 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25)]
+2026-05-22 20:30:38 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25)
+2026-05-22 20:30:38 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25),[]>
+2026-05-22 20:30:44 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6)]
+2026-05-22 20:30:44 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6)]
+2026-05-22 20:30:44 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6)
+2026-05-22 20:30:44 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6),[]>
+2026-05-22 20:30:50 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18)]
+2026-05-22 20:30:50 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18)]
+2026-05-22 20:30:50 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18)
+2026-05-22 20:30:50 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18),[]>
+2026-05-22 20:30:55 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12)]
+2026-05-22 20:30:55 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12)]
+2026-05-22 20:30:55 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12)
+2026-05-22 20:30:55 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12),[]>
+2026-05-22 20:31:00 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30)]
+2026-05-22 20:31:00 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30)]
+2026-05-22 20:31:00 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30)
+2026-05-22 20:31:00 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30),[]>
+2026-05-22 20:31:06 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40)]
+2026-05-22 20:31:06 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40)]
+2026-05-22 20:31:06 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40)
+2026-05-22 20:31:06 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40),[]>
+2026-05-22 20:31:11 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10)]
+2026-05-22 20:31:11 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10)]
+2026-05-22 20:31:11 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10)
+2026-05-22 20:31:11 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10),[]>
+2026-05-22 20:31:16 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16)]
+2026-05-22 20:31:16 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16)]
+2026-05-22 20:31:16 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16)
+2026-05-22 20:31:16 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16),[]>
+2026-05-22 20:31:22 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22)]
+2026-05-22 20:31:22 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22)]
+2026-05-22 20:31:22 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22)
+2026-05-22 20:31:22 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22),[]>
+2026-05-22 20:31:27 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35)]
+2026-05-22 20:31:27 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35)]
+2026-05-22 20:31:27 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35)
+2026-05-22 20:31:27 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35),[]>
+2026-05-22 20:31:31 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14)]
+2026-05-22 20:31:31 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14)]
+2026-05-22 20:31:31 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14)
+2026-05-22 20:31:31 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14),[]>
+2026-05-22 20:31:37 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.AdminProductController.createProduct() with arguments =[ProductCreationRequest(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28)]
+2026-05-22 20:31:37 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.createProduct() with arguments = [ProductCreationRequest(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28)]
+2026-05-22 20:31:37 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.createProduct() executed successfully. Return =ProductCreationResponse(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28)
+2026-05-22 20:31:37 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.AdminProductController.createProduct() executed successfully. Return =<201 CREATED Created,ProductCreationResponse(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28),[]>
+2026-05-22 20:40:30 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-05-22 20:40:30 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-22 20:40:30 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-22 20:40:31 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:40:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-22 20:40:31 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-22 20:40:31 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 24028 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 20:40:31 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 20:40:31 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [com.djm.ecom.service.ProductServiceImpl]
+2026-05-22 20:40:31 ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: I/O failure while processing configuration class [com.djm.ecom.service.ProductServiceImpl]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:286) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:218) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:354) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:204) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:172) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:418) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.3.jar:3.5.3]
+	at com.djm.ecom.EcomApplication.main(EcomApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.3.jar:3.5.3]
+Caused by: java.io.FileNotFoundException: class path resource [com/djm/ecom/service/ProductService.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:215) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:54) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:48) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:98) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:85) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81) ~[spring-core-6.2.8.jar:6.2.8]
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:75) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:711) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser$SourceClass.getInterfaces(ConfigurationClassParser.java:1060) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.processInterfaces(ConfigurationClassParser.java:441) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:385) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:281) ~[spring-context-6.2.8.jar:6.2.8]
+	... 23 common frames omitted
+2026-05-22 20:40:32 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 24028 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 20:40:32 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 20:40:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22 20:40:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 2 JPA repository interfaces.
+2026-05-22 20:40:33 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-22 20:40:33 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-22 20:40:33 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-22 20:40:33 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-22 20:40:33 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 497 ms
+2026-05-22 20:40:33 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-22 20:40:33 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-22 20:40:33 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22 20:40:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-05-22 20:40:33 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6024f077
+2026-05-22 20:40:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-05-22 20:40:33 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 9.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22 20:40:33 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22 20:40:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:40:33 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-05-22 20:40:33 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-22 20:40:34 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-05-22 20:40:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-22 20:40:34 INFO  com.djm.ecom.EcomApplication - Started EcomApplication in 1.522 seconds (process running for 1020.129)
+2026-05-22 20:40:34 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-05-22 20:41:33 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2026-05-22 20:41:33 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-22 20:41:33 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-22 20:41:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:41:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-05-22 20:41:33 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-05-22 20:41:33 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 24028 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 20:41:33 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 20:41:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22 20:41:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+2026-05-22 20:41:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-22 20:41:34 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-22 20:41:34 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-22 20:41:34 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-22 20:41:34 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 429 ms
+2026-05-22 20:41:34 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-22 20:41:34 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-22 20:41:34 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22 20:41:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-05-22 20:41:34 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e3cf561
+2026-05-22 20:41:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-05-22 20:41:34 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 9.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22 20:41:34 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22 20:41:34 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:41:34 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminProductController': Resolution of declared constructors on bean Class [com.djm.ecom.controller.AdminProductController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@9534251] failed
+2026-05-22 20:41:34 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:41:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-05-22 20:41:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-05-22 20:41:34 INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-05-22 20:41:34 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-22 20:41:34 ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminProductController': Resolution of declared constructors on bean Class [com.djm.ecom.controller.AdminProductController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@9534251] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:384) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.3.jar:3.5.3]
+	at com.djm.ecom.EcomApplication.main(EcomApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.3.jar:3.5.3]
+Caused by: java.lang.NoClassDefFoundError: com/djm/ecom/service/ProductService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2555) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-6.2.8.jar:6.2.8]
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.djm.ecom.service.ProductService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.3.jar:3.5.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 29 common frames omitted
+2026-05-22 20:45:58 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 24028 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 20:45:58 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 20:45:58 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22 20:45:58 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2026-05-22 20:45:58 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-22 20:45:58 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-22 20:45:58 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-22 20:45:58 INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-22 20:45:58 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 360 ms
+2026-05-22 20:45:58 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-22 20:45:58 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-22 20:45:58 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22 20:45:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-05-22 20:45:58 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ed3fbe0
+2026-05-22 20:45:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-05-22 20:45:58 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 9.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22 20:45:58 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22 20:45:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:45:58 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-05-22 20:45:59 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-22 20:45:59 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-05-22 20:45:59 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-22 20:45:59 INFO  com.djm.ecom.EcomApplication - Started EcomApplication in 1.057 seconds (process running for 1343.572)
+2026-05-22 20:45:59 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2026-05-22 20:49:23 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-22 20:49:23 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-22 20:49:23 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:49:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-05-22 20:49:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-05-22 20:49:25 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 35040 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 20:49:25 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 20:49:25 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-22 20:49:25 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-22 20:49:26 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22 20:49:26 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 2 JPA repository interfaces.
+2026-05-22 20:49:27 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-22 20:49:27 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-22 20:49:27 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-22 20:49:27 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-22 20:49:27 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1635 ms
+2026-05-22 20:49:27 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-22 20:49:27 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+2026-05-22 20:49:27 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-22 20:49:28 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22 20:49:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-22 20:49:28 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d353947
+2026-05-22 20:49:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-22 20:49:28 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22 20:49:29 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22 20:49:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 20:49:30 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-05-22 20:49:31 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-22 20:49:32 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-05-22 20:49:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-22 20:49:32 INFO  com.djm.ecom.EcomApplication - Started EcomApplication in 7.296 seconds (process running for 7.643)
+2026-05-22 20:49:44 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-22 20:49:44 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-22 20:49:44 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-05-22 20:49:44 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.ProductController.getAllProducts() with arguments =[]
+2026-05-22 20:49:44 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.getAllProducts() with arguments = []
+2026-05-22 20:49:44 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.getAllProducts() executed successfully. Return =[ProductCreationResponse(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10), ProductCreationResponse(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20), ProductCreationResponse(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8), ProductCreationResponse(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25), ProductCreationResponse(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6), ProductCreationResponse(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18), ProductCreationResponse(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12), ProductCreationResponse(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30), ProductCreationResponse(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40), ProductCreationResponse(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10), ProductCreationResponse(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16), ProductCreationResponse(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22), ProductCreationResponse(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35), ProductCreationResponse(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14), ProductCreationResponse(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28)]
+2026-05-22 20:49:44 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.ProductController.getAllProducts() executed successfully. Return =<200 OK OK,[ProductCreationResponse(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10), ProductCreationResponse(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20), ProductCreationResponse(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8), ProductCreationResponse(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25), ProductCreationResponse(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6), ProductCreationResponse(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18), ProductCreationResponse(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12), ProductCreationResponse(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30), ProductCreationResponse(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40), ProductCreationResponse(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10), ProductCreationResponse(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16), ProductCreationResponse(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22), ProductCreationResponse(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35), ProductCreationResponse(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14), ProductCreationResponse(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28)],[]>
+2026-05-22 21:01:20 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 4 class path changes (0 additions, 4 deletions, 0 modifications)
+2026-05-22 21:01:20 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-22 21:01:20 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-22 21:01:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 21:01:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-22 21:01:20 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-22 21:01:20 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 35040 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 21:01:20 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 21:01:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22 21:01:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.
+2026-05-22 21:01:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-22 21:01:20 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-22 21:01:20 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-22 21:01:20 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-22 21:01:20 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 516 ms
+2026-05-22 21:01:21 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-22 21:01:21 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-22 21:01:21 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22 21:01:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-05-22 21:01:21 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71d0cfa2
+2026-05-22 21:01:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-05-22 21:01:21 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 9.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22 21:01:21 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22 21:01:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 21:01:21 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminProductController': Resolution of declared constructors on bean Class [com.djm.ecom.controller.AdminProductController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@d23915e] failed
+2026-05-22 21:01:21 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 21:01:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-05-22 21:01:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-05-22 21:01:21 INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-05-22 21:01:21 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-22 21:01:21 ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminProductController': Resolution of declared constructors on bean Class [com.djm.ecom.controller.AdminProductController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@d23915e] failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:384) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.8.jar:6.2.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.3.jar:3.5.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.3.jar:3.5.3]
+	at com.djm.ecom.EcomApplication.main(EcomApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.3.jar:3.5.3]
+Caused by: java.lang.NoClassDefFoundError: com/djm/ecom/service/ProductService
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2555) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-6.2.8.jar:6.2.8]
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.djm.ecom.service.ProductService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.3.jar:3.5.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[na:na]
+	... 29 common frames omitted
+2026-05-22 21:03:16 INFO  com.djm.ecom.EcomApplication - Starting EcomApplication using Java 17.0.14 with PID 11156 (C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom\target\classes started by pupul in C:\Users\pupul\OneDrive\Desktop\Ecommerce app project\ecom)
+2026-05-22 21:03:16 INFO  com.djm.ecom.EcomApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-22 21:03:16 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-22 21:03:16 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-22 21:03:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-22 21:03:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 2 JPA repository interfaces.
+2026-05-22 21:03:18 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-22 21:03:18 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-22 21:03:18 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-05-22 21:03:18 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-22 21:03:18 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1642 ms
+2026-05-22 21:03:18 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-22 21:03:18 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.18.Final
+2026-05-22 21:03:18 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-05-22 21:03:19 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-22 21:03:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-22 21:03:19 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c61aee9
+2026-05-22 21:03:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-22 21:03:19 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-22 21:03:20 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-22 21:03:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 21:03:21 INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-05-22 21:03:21 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-22 21:03:22 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-05-22 21:03:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-22 21:03:22 INFO  com.djm.ecom.EcomApplication - Started EcomApplication in 5.709 seconds (process running for 6.041)
+2026-05-22 21:03:29 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-22 21:03:29 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-22 21:03:29 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-22 21:03:29 INFO  com.djm.ecom.aspect.LoggingAspect - Controller call: class com.djm.ecom.controller.ProductController.getAllProducts() with arguments =[]
+2026-05-22 21:03:29 INFO  com.djm.ecom.aspect.LoggingAspect - Service call: class com.djm.ecom.service.ProductServiceImpl.getAllProducts() with arguments = []
+2026-05-22 21:03:29 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.service.ProductServiceImpl.getAllProducts() executed successfully. Return =[ProductCreationResponse(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10), ProductCreationResponse(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20), ProductCreationResponse(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8), ProductCreationResponse(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25), ProductCreationResponse(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6), ProductCreationResponse(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18), ProductCreationResponse(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12), ProductCreationResponse(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30), ProductCreationResponse(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40), ProductCreationResponse(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10), ProductCreationResponse(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16), ProductCreationResponse(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22), ProductCreationResponse(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35), ProductCreationResponse(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14), ProductCreationResponse(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28)]
+2026-05-22 21:03:29 INFO  com.djm.ecom.aspect.LoggingAspect - Method com.djm.ecom.controller.ProductController.getAllProducts() executed successfully. Return =<200 OK OK,[ProductCreationResponse(name=iPhone 15, description=Apple iPhone 15 with 128GB storage and A16 Bionic chip, price=79999.99, quantity=10), ProductCreationResponse(name=Samsung Galaxy S24, description=Samsung flagship Android smartphone, price=74999.50, quantity=20), ProductCreationResponse(name=MacBook Air M3, description=Apple MacBook Air with M3 chip and 16GB RAM, price=134999.00, quantity=8), ProductCreationResponse(name=Sony WH-1000XM5, description=Noise cancelling wireless headphones, price=29999.00, quantity=25), ProductCreationResponse(name=Dell XPS 15, description=Premium Windows laptop for developers, price=159999.99, quantity=6), ProductCreationResponse(name=Apple Watch Series 9, description=Apple smartwatch with health tracking, price=45999.99, quantity=18), ProductCreationResponse(name=iPad Air, description=Apple tablet with M2 chip, price=64999.00, quantity=12), ProductCreationResponse(name=Logitech MX Master 3S, description=Wireless productivity mouse, price=9999.99, quantity=30), ProductCreationResponse(name=Mechanical Keyboard, description=RGB mechanical gaming keyboard, price=6999.00, quantity=40), ProductCreationResponse(name=Gaming Monitor 27 Inch, description=144Hz QHD gaming monitor, price=24999.99, quantity=10), ProductCreationResponse(name=OnePlus 12, description=Flagship Android smartphone by OnePlus, price=65999.00, quantity=16), ProductCreationResponse(name=AirPods Pro, description=Apple wireless earbuds with ANC, price=24999.00, quantity=22), ProductCreationResponse(name=External SSD 1TB, description=Portable high-speed SSD storage, price=8999.99, quantity=35), ProductCreationResponse(name=Gaming Chair, description=Ergonomic gaming chair with lumbar support, price=15999.50, quantity=14), ProductCreationResponse(name=Webcam Full HD, description=1080p webcam for streaming and meetings, price=4999.00, quantity=28)],[]>
+2026-05-22 21:06:29 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-22 21:06:29 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-22 21:06:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-22 21:06:29 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-22 21:06:29 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

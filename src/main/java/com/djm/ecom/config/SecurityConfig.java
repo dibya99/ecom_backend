@@ -34,13 +34,15 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/register", "/api/auth/login")
                         .permitAll()
+                        .requestMatchers("/api/products/**")
+                        .permitAll()
                         .requestMatchers("/api/admin/**")
                         .hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .exceptionHandling(ex ->
                         ex.authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                ;
+        ;
         return httpSecurity.build();
 
 

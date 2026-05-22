@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @ToString
 @Builder
 public class ProductCreationResponse {
+    private long id;
     private String name;
     private String description;
     private BigDecimal price;

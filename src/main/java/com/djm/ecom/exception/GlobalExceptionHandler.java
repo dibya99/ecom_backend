@@ -41,8 +41,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(AuthenticationException.class)
-    ResponseEntity<ErrorResponse> handleAuthenticationException(AuthenticationException authenticationException)
-    {
+    ResponseEntity<ErrorResponse> handleAuthenticationException(AuthenticationException authenticationException) {
         ErrorResponse errorResponse = ErrorResponse.builder()
                 .statusCode(HttpStatus.UNAUTHORIZED.value())
                 .message(authenticationException.getMessage())
@@ -50,6 +49,15 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
     }
 
+
+    @ExceptionHandler(ProductNotFoundException.class)
+    ResponseEntity<ErrorResponse> handleProductNotFoundException(ProductNotFoundException productNotFoundException) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .message(productNotFoundException.getMessage())
+                .build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+    }
 
 
     @ExceptionHandler(Exception.class)
