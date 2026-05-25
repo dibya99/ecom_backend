@@ -56,12 +56,13 @@ Build a **production-grade monolithic e-commerce backend** using:
 
 ### 🛒 Cart APIs
 
-| Method | Endpoint                    | Description              |
-|--------|------------------------------|--------------------------|
-| POST   | `/api/cart/add/{productId}`  | Add product to cart      |
-| DELETE | `/api/cart/remove/{productId}` | Remove product from cart |
-| GET    | `/api/cart`                  | View cart contents       |
-| DELETE | `/api/cart/clear`            | Empty the cart           |
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/cart/items` | Add product to cart |
+| GET | `/api/cart` | View current user's cart |
+| PATCH | `/api/cart/items/{cartItemId}` | Update quantity of a cart item |
+| DELETE | `/api/cart/items/{cartItemId}` | Remove item from cart |
+| DELETE | `/api/cart/items` | Clear entire cart |
 
 ---
 
