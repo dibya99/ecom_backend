@@ -3,6 +3,7 @@ package com.djm.ecom.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,6 +29,6 @@ public class Cart {
                     cascade = CascadeType.ALL,
                     orphanRemoval = true
             )
-    private List<CartItem> cartItemList;
+    private List<CartItem> cartItemList = new ArrayList<>();
 
 }

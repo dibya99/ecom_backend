@@ -10,6 +10,6 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 public class CartResponse {
-    private long cardId;
-    private List<String> itemList;
+    private long cartId;
+    private List<CartItemResponse> itemList;
 }

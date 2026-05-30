@@ -1,14 +1,14 @@
 package com.djm.ecom.controller;
 
+import com.djm.ecom.dto.AddToCartRequest;
 import com.djm.ecom.dto.CartResponse;
 import com.djm.ecom.entity.Cart;
 import com.djm.ecom.service.CartService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/carts")
@@ -21,5 +21,11 @@ public class CartController {
         CartResponse cartResponse = cartService.getCart();
         return ResponseEntity.status(HttpStatus.OK).body(cartResponse);
 
+    }
+
+    @PostMapping("/items")
+    public ResponseEntity<CartResponse> addProductToCart(@Valid @RequestBody AddToCartRequest addToCartRequest) {
+        CartResponse cartResponse = cartService.addProductToCart(addToCartRequest);
+        return ResponseEntity.status(HttpStatus.OK).body(cartResponse);
     }
 }
