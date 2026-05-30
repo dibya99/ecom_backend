@@ -1,5 +1,6 @@
 package com.djm.ecom.exception;
 
+import jakarta.persistence.ElementCollection;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
@@ -57,6 +58,15 @@ public class GlobalExceptionHandler {
                 .message(productNotFoundException.getMessage())
                 .build();
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+    }
+
+    @ExceptionHandler(NotEnoughQuantityException.class)
+    ResponseEntity<ErrorResponse> handleNotEnoughQuantityException(NotEnoughQuantityException notEnoughQuantityException) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .statusCode(HttpStatus.CONFLICT.value())
+                .message(notEnoughQuantityException.getMessage())
+                .build();
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
     }
 
 

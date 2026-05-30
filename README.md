@@ -126,6 +126,7 @@ Build a **production-grade monolithic e-commerce backend** using:
 - [X] US-4: User has have user role by default
 - [X] US-5: As an admin, I want to create new products.
 - [X] US-6	As a user, I want to view all products and get product details.
+- [X] US-7	As a user, I want to add products to my cart.
 - [ ] Remaining user stories & APIs in progress...
 
 ---

@@ -7,6 +7,7 @@ import com.djm.ecom.entity.Cart;
 import com.djm.ecom.entity.CartItem;
 import com.djm.ecom.entity.Product;
 import com.djm.ecom.entity.User;
+import com.djm.ecom.exception.NotEnoughQuantityException;
 import com.djm.ecom.exception.ProductNotFoundException;
 import com.djm.ecom.repository.CartRepositoy;
 import com.djm.ecom.repository.ProductRepository;
@@ -84,11 +85,29 @@ public class CartServiceImpl implements CartService {
         Optional<Product> optionalProduct = productRepository.findById(productId);
         if (optionalProduct.isEmpty())
             throw new ProductNotFoundException("Invalid product Id");
-        CartItem cartItem = new CartItem();
-        cartItem.setCart(cart);
-        cartItem.setProduct(optionalProduct.get());
-        cartItem.setQuantity(quantity);
-        cart.getCartItemList().add(cartItem);
+        CartItem cartItem = null;
+        // Business logic fix
+        boolean isAlreadyPresent = false;
+        for (CartItem item : cart.getCartItemList()) {
+            if (item.getProduct().getProductId() == productId) {
+                if (item.getQuantity() + quantity > item.getProduct().getQuantity())
+                    throw new NotEnoughQuantityException("Not enough quantity");
+                cartItem = item;
+                isAlreadyPresent = true;
+                item.setQuantity(item.getQuantity() + quantity);
+                break;
+            }
+        }
+
+        if (!isAlreadyPresent) {
+            if (quantity > optionalProduct.get().getQuantity())
+                throw new NotEnoughQuantityException("Not enough quantity");
+            cartItem = new CartItem();
+            cartItem.setCart(cart);
+            cartItem.setProduct(optionalProduct.get());
+            cartItem.setQuantity(quantity);
+            cart.getCartItemList().add(cartItem);
+        }
         cartRepository.save(cart);
         List<CartItemResponse> cartItemResponseList = new ArrayList<>();
         for (CartItem cartItemIter : cart.getCartItemList()) {
