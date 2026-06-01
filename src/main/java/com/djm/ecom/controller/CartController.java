@@ -28,4 +28,16 @@ public class CartController {
         CartResponse cartResponse = cartService.addProductToCart(addToCartRequest);
         return ResponseEntity.status(HttpStatus.OK).body(cartResponse);
     }
+
+    @DeleteMapping("/items/{productId}")
+    public ResponseEntity<CartResponse> removeItemFromCart(@PathVariable long productId) {
+        CartResponse cartResponse = cartService.removeItemFromCart(productId);
+        return ResponseEntity.status(HttpStatus.OK).body(cartResponse);
+    }
+
+    @DeleteMapping("/items")
+    public ResponseEntity<CartResponse> removeAllItemsFromCart() {
+        CartResponse cartResponse = cartService.removeAllItemsFromCart();
+        return ResponseEntity.status(HttpStatus.OK).body(cartResponse);
+    }
 }

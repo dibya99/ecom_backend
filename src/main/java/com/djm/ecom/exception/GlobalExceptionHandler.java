@@ -69,6 +69,23 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(errorResponse);
     }
 
+    @ExceptionHandler(CartNotFoundException.class)
+    ResponseEntity<ErrorResponse> handleCartNotFoundException(CartNotFoundException cartNotFoundException) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .message(cartNotFoundException.getMessage())
+                .build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+    }
+
+    @ExceptionHandler(CartItemNotFoundException.class)
+    ResponseEntity<ErrorResponse> cartItemNotFoundException(CartItemNotFoundException cartItemNotFoundException) {
+        ErrorResponse errorResponse = ErrorResponse.builder()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .message(cartItemNotFoundException.getMessage())
+                .build();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+    }
 
     @ExceptionHandler(Exception.class)
     ResponseEntity<ErrorResponse> handleGeneralException(Exception exception) {

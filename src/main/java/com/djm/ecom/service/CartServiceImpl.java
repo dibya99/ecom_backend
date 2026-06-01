@@ -7,6 +7,8 @@ import com.djm.ecom.entity.Cart;
 import com.djm.ecom.entity.CartItem;
 import com.djm.ecom.entity.Product;
 import com.djm.ecom.entity.User;
+import com.djm.ecom.exception.CartItemNotFoundException;
+import com.djm.ecom.exception.CartNotFoundException;
 import com.djm.ecom.exception.NotEnoughQuantityException;
 import com.djm.ecom.exception.ProductNotFoundException;
 import com.djm.ecom.repository.CartRepositoy;
@@ -124,5 +126,71 @@ public class CartServiceImpl implements CartService {
                 .build();
 
 
+    }
+
+    @Override
+    public CartResponse removeItemFromCart(long productId) {
+        Authentication authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
+        String email = authentication.getName();
+        User user = userRepository.findByEmail(email).orElseThrow(() -> {
+            return new UsernameNotFoundException("User not found");
+        });
+        Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
+        {
+            throw new CartNotFoundException("Cart not found for this user");
+        });
+        CartItem removedItem = null;
+        for (CartItem cartItem : cart.getCartItemList()) {
+            if (cartItem.getProduct().getProductId() == productId) {
+                removedItem = cartItem;
+                break;
+            }
+        }
+
+        if (removedItem == null)
+            throw new CartItemNotFoundException("Cart Item found in the cart");
+
+        cart.getCartItemList().remove(removedItem);
+        cartRepository.save(cart);
+
+        List<CartItemResponse> cartItemResponseList = new ArrayList<>();
+        for (CartItem cartItemIter : cart.getCartItemList()) {
+            cartItemResponseList.add(CartItemResponse.builder()
+                    .productName(cartItemIter.getProduct().getName())
+                    .productQuantity(cartItemIter.getQuantity())
+                    .productId(cartItemIter.getProduct().getProductId())
+                    .build())
+            ;
+        }
+        return CartResponse.builder()
+                .cartId(cart.getCartId())
+                .itemList(cartItemResponseList)
+                .build();
+
+
+    }
+
+    @Override
+    public CartResponse removeAllItemsFromCart() {
+        Authentication authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
+        String email = authentication.getName();
+        User user = userRepository.findByEmail(email).orElseThrow(() -> {
+            return new UsernameNotFoundException("User not found");
+        });
+        Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
+        {
+            throw new CartNotFoundException("Cart not found for this user");
+        });
+        cart.getCartItemList().clear();
+        cartRepository.save(cart);
+        List<CartItemResponse> cartItemResponseList = new ArrayList<>();
+        return CartResponse.builder()
+                .cartId(cart.getCartId())
+                .itemList(cartItemResponseList)
+                .build();
     }
 }
