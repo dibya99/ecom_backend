@@ -56,13 +56,13 @@ Build a **production-grade monolithic e-commerce backend** using:
 
 ### 🛒 Cart APIs
 
-| Method | Endpoint                        | Description |
-|---|---------------------------------|---|
-| POST | `/api/carts/items`              | Add product to cart |
-| GET | `/api/carts`                    | View current user's cart |
-| PATCH | `/api/carts/items/{cartItemId}` | Update quantity of a cart item |
-| DELETE | `/api/carts/items/{cartItemId}` | Remove item from cart |
-| DELETE | `/api/carts/items`              | Clear entire cart |
+| Method | Endpoint                          | Description              |
+| ------ | --------------------------------- | ------------------------ |
+| POST   | `/api/carts/items`                | Add product to cart      |
+| GET    | `/api/carts`                      | View current user's cart |
+| DELETE | `/api/carts/products/{productId}` | Remove product from cart |
+| DELETE | `/api/carts/items`                | Clear entire cart        |
+
 
 ---
 
@@ -127,6 +127,7 @@ Build a **production-grade monolithic e-commerce backend** using:
 - [X] US-5: As an admin, I want to create new products.
 - [X] US-6	As a user, I want to view all products and get product details.
 - [X] US-7	As a user, I want to add products to my cart.
+- [X] US-8 As a user, I want to view and manage my cart (view/remove items).
 - [ ] Remaining user stories & APIs in progress...
 
 ---
