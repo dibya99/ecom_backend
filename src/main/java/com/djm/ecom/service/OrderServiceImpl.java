@@ -1,16 +1,95 @@
 package com.djm.ecom.service;
 
 import com.djm.ecom.dto.OrderCreationRequest;
+import com.djm.ecom.dto.OrderItemResponse;
 import com.djm.ecom.dto.OrderResponse;
+import com.djm.ecom.entity.*;
+import com.djm.ecom.exception.CartItemNotFoundException;
+import com.djm.ecom.exception.CartNotFoundException;
+import com.djm.ecom.exception.NotEnoughQuantityException;
+import com.djm.ecom.repository.CartRepository;
+import com.djm.ecom.repository.OrderRepository;
+import com.djm.ecom.repository.UserRepository;
+import com.djm.ecom.strategy.PaymentStrategy;
+import com.djm.ecom.strategy.PaymentStrategyFactory;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
 
 @Service
 @RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
+
+    private final PaymentStrategyFactory paymentStrategyFactory;
+    private final UserRepository userRepository;
+    private final CartRepository cartRepository;
+    private final OrderRepository orderRepository;
 
     @Override
+    @Transactional
     public OrderResponse placeOrder(OrderCreationRequest orderCreationRequest) {
-        return null;
+        Authentication authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
+        String email = authentication.getName();
+        User user = userRepository.findByEmail(email).orElseThrow(() ->
+                new UsernameNotFoundException("User not found"));
+        Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
+                new CartNotFoundException("Cart not found for this user"));
+        if (cart.getCartItemList().isEmpty())
+            throw new CartItemNotFoundException("The user cart is empty");
+        for (CartItem cartItem : cart.getCartItemList()) {
+            if (cartItem.getQuantity() > cartItem.getProduct().getQuantity())
+                throw new NotEnoughQuantityException("Not enough quantity in inventory");
+        }
+        Order order = Order.builder()
+                .paymentMethod(orderCreationRequest.getPaymentMethod())
+                .user(user)
+                .build();
+        BigDecimal totalAmount = BigDecimal.ZERO;
+        for (CartItem cartItem : cart.getCartItemList()) {
+            OrderItem orderItem = OrderItem.builder()
+                    .order(order)
+                    .product(cartItem.getProduct())
+                    .price(cartItem.getProduct().getPrice())
+                    .quantity(cartItem.getQuantity())
+                    .build();
+            order.getOrderItemList().add(orderItem);
+            totalAmount = totalAmount.add(cartItem.getProduct().getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())));
+        }
+        PaymentStrategy paymentStrategy = paymentStrategyFactory.
+                getStrategy(orderCreationRequest.getPaymentMethod());
+        order.setTotalAmount(totalAmount);
+        paymentStrategy.processPayment(totalAmount);
+        for (OrderItem orderItem : order.getOrderItemList()) {
+            orderItem.getProduct().setQuantity(orderItem.getProduct().getQuantity() - orderItem.getQuantity());
+        }
+        orderRepository.save(order);
+        cart.getCartItemList().clear();
+        cartRepository.save(cart);
+        OrderResponse orderResponse = OrderResponse.builder()
+                .orderId(order.getOrderId())
+                .paymentMethod(order.getPaymentMethod())
+                .createdAt(order.getCreatedAt())
+                .totalPrice(order.getTotalAmount())
+                .build();
+        for (OrderItem orderItem : order.getOrderItemList()) {
+            OrderItemResponse orderItemResponse = OrderItemResponse.builder()
+                    .quantity(orderItem.getQuantity())
+                    .productId(orderItem.getProduct().getProductId())
+                    .productName(orderItem.getProduct().getName())
+                    .price(orderItem.getPrice())
+                    .build();
+            orderResponse.getOrderItemResponseList().add(orderItemResponse);
+        }
+        return orderResponse;
+
+
     }
 }

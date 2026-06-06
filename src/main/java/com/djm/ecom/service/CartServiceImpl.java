@@ -11,7 +11,7 @@ import com.djm.ecom.exception.CartItemNotFoundException;
 import com.djm.ecom.exception.CartNotFoundException;
 import com.djm.ecom.exception.NotEnoughQuantityException;
 import com.djm.ecom.exception.ProductNotFoundException;
-import com.djm.ecom.repository.CartRepositoy;
+import com.djm.ecom.repository.CartRepository;
 import com.djm.ecom.repository.ProductRepository;
 import com.djm.ecom.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CartServiceImpl implements CartService {
 
-    private final CartRepositoy cartRepository;
+    private final CartRepository cartRepository;
     private final UserRepository userRepository;
     private final ProductRepository productRepository;
 
@@ -134,13 +134,10 @@ public class CartServiceImpl implements CartService {
                 .getContext()
                 .getAuthentication();
         String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() -> {
-            return new UsernameNotFoundException("User not found");
-        });
+        User user = userRepository.findByEmail(email).orElseThrow(() ->
+                new UsernameNotFoundException("User not found"));
         Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
-        {
-            throw new CartNotFoundException("Cart not found for this user");
-        });
+                new CartNotFoundException("Cart not found for this user"));
         CartItem removedItem = null;
         for (CartItem cartItem : cart.getCartItemList()) {
             if (cartItem.getProduct().getProductId() == productId) {
@@ -178,13 +175,9 @@ public class CartServiceImpl implements CartService {
                 .getContext()
                 .getAuthentication();
         String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() -> {
-            return new UsernameNotFoundException("User not found");
-        });
+        User user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
         Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
-        {
-            throw new CartNotFoundException("Cart not found for this user");
-        });
+                new CartNotFoundException("Cart not found for this user"));
         cart.getCartItemList().clear();
         cartRepository.save(cart);
         List<CartItemResponse> cartItemResponseList = new ArrayList<>();

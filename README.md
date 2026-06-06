@@ -128,6 +128,7 @@ Build a **production-grade monolithic e-commerce backend** using:
 - [X] US-6	As a user, I want to view all products and get product details.
 - [X] US-7	As a user, I want to add products to my cart.
 - [X] US-8 As a user, I want to view and manage my cart (view/remove items).
+- [X] US-9 As a user, I want to place an order using the items in my cart.
 - [ ] Remaining user stories & APIs in progress...
 
 ---
@@ -155,5 +156,6 @@ Build a **production-grade monolithic e-commerce backend** using:
 
 - Used Builder pattern by using Lombok in entities and DTOs.
 - Used Singleton design pattern. It is supported by springboot using @Autowired annotation
+- Used Factory and Strategy to do a mock of payment systems. 
 - More Patterns to be used in future.
 

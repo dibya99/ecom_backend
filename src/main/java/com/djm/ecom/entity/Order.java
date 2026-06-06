@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class Order {
             (mappedBy = "order",
                     cascade = CascadeType.ALL
             )
+    @Builder.Default
     private List<OrderItem> orderItemList = new ArrayList<>();
 
     @Column(name = "payment_method")
@@ -39,4 +41,7 @@ public class Order {
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "total_amount")
+    private BigDecimal totalAmount;
 }
