@@ -7,10 +7,9 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,4 +22,11 @@ public class OrderController {
         OrderResponse orderResponse = orderService.placeOrder(orderCreationRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(orderResponse);
     }
+
+    @GetMapping
+    public ResponseEntity<List<OrderResponse>> getOrders() {
+        List<OrderResponse> orderResponseList = orderService.getOrders();
+        return ResponseEntity.status(HttpStatus.OK).body(orderResponseList);
+    }
+
 }

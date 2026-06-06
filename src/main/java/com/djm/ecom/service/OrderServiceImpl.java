@@ -1,5 +1,6 @@
 package com.djm.ecom.service;
 
+import com.djm.ecom.dto.AdminOrderResponse;
 import com.djm.ecom.dto.OrderCreationRequest;
 import com.djm.ecom.dto.OrderItemResponse;
 import com.djm.ecom.dto.OrderResponse;
@@ -21,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -92,4 +94,69 @@ public class OrderServiceImpl implements OrderService {
 
 
     }
+
+    @Override
+    public List<OrderResponse> getOrders() {
+
+        Authentication authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
+        String email = authentication.getName();
+        User user = userRepository.findByEmail(email).orElseThrow(() ->
+                new UsernameNotFoundException("User not found"));
+        List<Order> orderList = orderRepository.findByUserOrderByCreatedAtDesc(user);
+        List<OrderResponse> orderResponseList = new ArrayList<>();
+        for (Order order : orderList) {
+            OrderResponse orderResponse = OrderResponse.builder()
+                    .orderId(order.getOrderId())
+                    .paymentMethod(order.getPaymentMethod())
+                    .createdAt(order.getCreatedAt())
+                    .totalPrice(order.getTotalAmount())
+                    .build();
+
+            for (OrderItem orderItem : order.getOrderItemList()) {
+                OrderItemResponse orderItemResponse = OrderItemResponse.builder()
+                        .quantity(orderItem.getQuantity())
+                        .productId(orderItem.getProduct().getProductId())
+                        .productName(orderItem.getProduct().getName())
+                        .price(orderItem.getPrice())
+                        .build();
+                orderResponse.getOrderItemResponseList().add(orderItemResponse);
+            }
+            orderResponseList.add(orderResponse);
+
+        }
+        return orderResponseList;
+    }
+
+    @Override
+    public List<AdminOrderResponse> getAllOrders() {
+        List<Order> allOrders = orderRepository.findAll();
+        List<AdminOrderResponse> adminOrderResponseList = new ArrayList<>();
+        for (Order order : allOrders) {
+            AdminOrderResponse adminOrderResponse = AdminOrderResponse.builder()
+                    .orderId(order.getOrderId())
+                    .userEmail(order.getUser().getEmail())
+                    .paymentMethod(order.getPaymentMethod())
+                    .createdAt(order.getCreatedAt())
+                    .totalPrice(order.getTotalAmount())
+                    .build();
+
+            for (OrderItem orderItem : order.getOrderItemList()) {
+                OrderItemResponse orderItemResponse = OrderItemResponse.builder()
+                        .quantity(orderItem.getQuantity())
+                        .productId(orderItem.getProduct().getProductId())
+                        .productName(orderItem.getProduct().getName())
+                        .price(orderItem.getPrice())
+                        .build();
+                adminOrderResponse.getOrderItemResponseList().add(orderItemResponse);
+            }
+            adminOrderResponseList.add(adminOrderResponse);
+
+        }
+        return adminOrderResponseList;
+
+    }
+
+
 }
