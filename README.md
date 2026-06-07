@@ -49,8 +49,6 @@ Build a **production-grade monolithic e-commerce backend** using:
 | Method | Endpoint               | Description                  |
 |--------|------------------------|------------------------------|
 | GET    | `/api/users/me`        | Get logged-in user's profile |
-| GET    | `/api/users/me/orders` | Get user's order history     |
-| GET    | `/api/users/me/cart`   | View user's current cart     |
 
 ---
 
