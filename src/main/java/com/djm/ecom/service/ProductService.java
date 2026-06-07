@@ -9,4 +9,6 @@ public interface ProductService {
     ProductCreationResponse createProduct(ProductCreationRequest productCreationRequest);
     List<ProductCreationResponse> getAllProducts();
     ProductCreationResponse getProduct(long productId);
+    ProductCreationResponse updateProduct(long productId, ProductCreationRequest productUpdateRequest);
+    void deleteProduct(long productId);
 }
