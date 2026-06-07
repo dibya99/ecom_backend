@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Backend - Phase 1
+# 🛒 E-Commerce Backend 
 
 Trying to develop a backend for an e-commerce system using Java Spring Boot framework.
 
