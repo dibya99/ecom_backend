@@ -131,6 +131,66 @@ Build a **production-grade monolithic e-commerce backend** using:
 
 ---
 
+---
+
+# 🚀 Phase 1.5 - Refactoring & Production Readiness
+
+## 🎯 Goal
+
+Improve maintainability, readability, extensibility, and observability of the codebase without introducing major new business features.
+
+This phase focuses on writing code like an experienced backend engineer rather than adding more APIs.
+
+---
+
+## 🧾 User Stories for Phase 1.5
+
+| ID | User Story |
+|----|------------|
+| US-R1 | As a developer, I want a CurrentUserService so that authentication lookup logic is centralized. |
+| US-R2 | As a developer, I want an OrderMapper so that DTO conversion logic is reusable. |
+| US-R3 | As a developer, I want a CartMapper so that CartResponse generation is centralized. |
+| US-R4 | As a developer, I want a ProductMapper so that Product DTO mapping is reusable. |
+| US-R5 | As a developer, I want AOP-based request logging so that service execution can be traced. |
+| US-R6 | As a developer, I want execution time logging so that slow operations can be identified. |
+| US-R7 | As a business owner, I want soft-delete support for products so that historical orders remain valid. |
+| US-R8 | As a developer, I want large service methods decomposed into smaller methods so that business logic is easier to maintain. |
+| US-R9 | As a developer, I want API documentation and architecture diagrams so that onboarding becomes easier. |
+
+---
+
+## 📚 Concepts Covered in Phase 1.5
+
+### Spring
+
+- Spring AOP
+- Bean Lifecycle
+- Constructor Injection Best Practices
+- Transaction Boundaries
+
+### Code Quality
+
+- Refactoring
+- Separation of Concerns
+- DRY Principle
+- Mapper Layer
+- Service Decomposition
+
+### Design Improvements
+
+- Soft Delete Pattern
+- DTO Mapping Layer
+- Authentication Facade / CurrentUserService
+
+### Observability
+
+- Request Logging
+- Method Execution Logging
+- Performance Metrics
+
+---
+
+
 ## 📌 How to Run
 
 ```bash
@@ -148,8 +208,26 @@ Build a **production-grade monolithic e-commerce backend** using:
 
 ## Design Patterns
 
-- Used Builder pattern by using Lombok in entities and DTOs.
-- Used Singleton design pattern. It is supported by springboot using @Autowired annotation
-- Used Factory and Strategy to do a mock of payment systems.
-- More Patterns to be used in future.
+### Implemented
+
+- Builder Pattern (Lombok DTOs and Entities)
+- Strategy Pattern (Payment Processing)
+- Factory Pattern (Payment Strategy Resolution)
+- Singleton Pattern (Spring-managed Beans)
+
+### Planned
+
+- Mapper Pattern (Phase 1.5)
+- Proxy Pattern (Caching - Phase 3)
+- Observer Pattern (Notifications - Phase 4)
+- Adapter Pattern (External Integrations - Phase 4)
+
+## Entity Relationships
+
+- User → Cart (One-to-One)
+- User → Order (One-to-Many)
+- Cart → CartItem (One-to-Many)
+- Order → OrderItem (One-to-Many)
+- Product → CartItem (Many-to-One)
+- Product → OrderItem (Many-to-One)
 
