@@ -14,9 +14,6 @@ import com.djm.ecom.repository.UserRepository;
 import com.djm.ecom.strategy.PaymentStrategy;
 import com.djm.ecom.strategy.PaymentStrategyFactory;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,19 +26,15 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     private final PaymentStrategyFactory paymentStrategyFactory;
-    private final UserRepository userRepository;
     private final CartRepository cartRepository;
     private final OrderRepository orderRepository;
+    private final CurrentUserService currentUserService;
 
     @Override
     @Transactional
     public OrderResponse placeOrder(OrderCreationRequest orderCreationRequest) {
-        Authentication authentication = SecurityContextHolder
-                .getContext()
-                .getAuthentication();
-        String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() ->
-                new UsernameNotFoundException("User not found"));
+
+        User user = currentUserService.getCurrentUser();
         Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
                 new CartNotFoundException("Cart not found for this user"));
         if (cart.getCartItemList().isEmpty())
@@ -98,12 +91,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<OrderResponse> getOrders() {
 
-        Authentication authentication = SecurityContextHolder
-                .getContext()
-                .getAuthentication();
-        String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() ->
-                new UsernameNotFoundException("User not found"));
+        User user = currentUserService.getCurrentUser();
         List<Order> orderList = orderRepository.findByUserOrderByCreatedAtDesc(user);
         List<OrderResponse> orderResponseList = new ArrayList<>();
         for (Order order : orderList) {

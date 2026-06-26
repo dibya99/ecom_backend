@@ -15,9 +15,6 @@ import com.djm.ecom.repository.CartRepository;
 import com.djm.ecom.repository.ProductRepository;
 import com.djm.ecom.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -29,18 +26,12 @@ import java.util.Optional;
 public class CartServiceImpl implements CartService {
 
     private final CartRepository cartRepository;
-    private final UserRepository userRepository;
     private final ProductRepository productRepository;
+    private final CurrentUserService currentUserService;
 
     @Override
     public CartResponse getCart() {
-        Authentication authentication = SecurityContextHolder
-                .getContext()
-                .getAuthentication();
-        String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() -> {
-            return new UsernameNotFoundException("User not found");
-        });
+        User user = currentUserService.getCurrentUser();
         Cart cart = cartRepository.findByUser(user)
                 .orElseGet(() ->
                 {
@@ -69,13 +60,7 @@ public class CartServiceImpl implements CartService {
     public CartResponse addProductToCart(AddToCartRequest addToCartRequest) {
         long productId = addToCartRequest.getProductId();
         int quantity = addToCartRequest.getQuantity();
-        Authentication authentication = SecurityContextHolder
-                .getContext()
-                .getAuthentication();
-        String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() -> {
-            return new UsernameNotFoundException("User not found");
-        });
+        User user = currentUserService.getCurrentUser();
         Cart cart = cartRepository.findByUser(user)
                 .orElseGet(() ->
                 {
@@ -130,12 +115,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartResponse removeItemFromCart(long productId) {
-        Authentication authentication = SecurityContextHolder
-                .getContext()
-                .getAuthentication();
-        String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() ->
-                new UsernameNotFoundException("User not found"));
+        User user = currentUserService.getCurrentUser();
         Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
                 new CartNotFoundException("Cart not found for this user"));
         CartItem removedItem = null;
@@ -171,11 +151,7 @@ public class CartServiceImpl implements CartService {
 
     @Override
     public CartResponse removeAllItemsFromCart() {
-        Authentication authentication = SecurityContextHolder
-                .getContext()
-                .getAuthentication();
-        String email = authentication.getName();
-        User user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        User user = currentUserService.getCurrentUser();
         Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
                 new CartNotFoundException("Cart not found for this user"));
         cart.getCartItemList().clear();
