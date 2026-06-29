@@ -2,15 +2,14 @@ package com.djm.ecom.service;
 
 import com.djm.ecom.dto.AdminOrderResponse;
 import com.djm.ecom.dto.OrderCreationRequest;
-import com.djm.ecom.dto.OrderItemResponse;
 import com.djm.ecom.dto.OrderResponse;
 import com.djm.ecom.entity.*;
 import com.djm.ecom.exception.CartItemNotFoundException;
 import com.djm.ecom.exception.CartNotFoundException;
 import com.djm.ecom.exception.NotEnoughQuantityException;
+import com.djm.ecom.mapper.OrderMapper;
 import com.djm.ecom.repository.CartRepository;
 import com.djm.ecom.repository.OrderRepository;
-import com.djm.ecom.repository.UserRepository;
 import com.djm.ecom.strategy.PaymentStrategy;
 import com.djm.ecom.strategy.PaymentStrategyFactory;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +28,7 @@ public class OrderServiceImpl implements OrderService {
     private final CartRepository cartRepository;
     private final OrderRepository orderRepository;
     private final CurrentUserService currentUserService;
+    private final OrderMapper orderMapper;
 
     @Override
     @Transactional
@@ -68,22 +68,7 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.save(order);
         cart.getCartItemList().clear();
         cartRepository.save(cart);
-        OrderResponse orderResponse = OrderResponse.builder()
-                .orderId(order.getOrderId())
-                .paymentMethod(order.getPaymentMethod())
-                .createdAt(order.getCreatedAt())
-                .totalPrice(order.getTotalAmount())
-                .build();
-        for (OrderItem orderItem : order.getOrderItemList()) {
-            OrderItemResponse orderItemResponse = OrderItemResponse.builder()
-                    .quantity(orderItem.getQuantity())
-                    .productId(orderItem.getProduct().getProductId())
-                    .productName(orderItem.getProduct().getName())
-                    .price(orderItem.getPrice())
-                    .build();
-            orderResponse.getOrderItemResponseList().add(orderItemResponse);
-        }
-        return orderResponse;
+        return orderMapper.toOrderResponse(order);
 
 
     }
@@ -95,52 +80,21 @@ public class OrderServiceImpl implements OrderService {
         List<Order> orderList = orderRepository.findByUserOrderByCreatedAtDesc(user);
         List<OrderResponse> orderResponseList = new ArrayList<>();
         for (Order order : orderList) {
-            OrderResponse orderResponse = OrderResponse.builder()
-                    .orderId(order.getOrderId())
-                    .paymentMethod(order.getPaymentMethod())
-                    .createdAt(order.getCreatedAt())
-                    .totalPrice(order.getTotalAmount())
-                    .build();
-
-            for (OrderItem orderItem : order.getOrderItemList()) {
-                OrderItemResponse orderItemResponse = OrderItemResponse.builder()
-                        .quantity(orderItem.getQuantity())
-                        .productId(orderItem.getProduct().getProductId())
-                        .productName(orderItem.getProduct().getName())
-                        .price(orderItem.getPrice())
-                        .build();
-                orderResponse.getOrderItemResponseList().add(orderItemResponse);
-            }
+            OrderResponse orderResponse = orderMapper.toOrderResponse(order);
             orderResponseList.add(orderResponse);
-
         }
+
         return orderResponseList;
     }
+
 
     @Override
     public List<AdminOrderResponse> getAllOrders() {
         List<Order> allOrders = orderRepository.findAll();
         List<AdminOrderResponse> adminOrderResponseList = new ArrayList<>();
         for (Order order : allOrders) {
-            AdminOrderResponse adminOrderResponse = AdminOrderResponse.builder()
-                    .orderId(order.getOrderId())
-                    .userEmail(order.getUser().getEmail())
-                    .paymentMethod(order.getPaymentMethod())
-                    .createdAt(order.getCreatedAt())
-                    .totalPrice(order.getTotalAmount())
-                    .build();
-
-            for (OrderItem orderItem : order.getOrderItemList()) {
-                OrderItemResponse orderItemResponse = OrderItemResponse.builder()
-                        .quantity(orderItem.getQuantity())
-                        .productId(orderItem.getProduct().getProductId())
-                        .productName(orderItem.getProduct().getName())
-                        .price(orderItem.getPrice())
-                        .build();
-                adminOrderResponse.getOrderItemResponseList().add(orderItemResponse);
-            }
+            AdminOrderResponse adminOrderResponse = orderMapper.toAdminOrderResponse(order);
             adminOrderResponseList.add(adminOrderResponse);
-
         }
         return adminOrderResponseList;
 
