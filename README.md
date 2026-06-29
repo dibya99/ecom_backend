@@ -150,7 +150,7 @@ This phase focuses on writing code like an experienced backend engineer rather t
 | [X] US-R1 | As a developer, I want a CurrentUserService so that authentication lookup logic is centralized. |
 | [X] US-R2 | As a developer, I want an OrderMapper so that DTO conversion logic is reusable. |
 | [X] US-R3 | As a developer, I want a CartMapper so that CartResponse generation is centralized. |
-| US-R4     | As a developer, I want a ProductMapper so that Product DTO mapping is reusable. |
+| [X] US-R4 | As a developer, I want a ProductMapper so that Product DTO mapping is reusable. |
 | US-R5     | As a developer, I want AOP-based request logging so that service execution can be traced. |
 | US-R6     | As a developer, I want execution time logging so that slow operations can be identified. |
 | US-R7     | As a business owner, I want soft-delete support for products so that historical orders remain valid. |
