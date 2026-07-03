@@ -151,10 +151,10 @@ This phase focuses on writing code like an experienced backend engineer rather t
 | [X] US-R2 | As a developer, I want an OrderMapper so that DTO conversion logic is reusable. |
 | [X] US-R3 | As a developer, I want a CartMapper so that CartResponse generation is centralized. |
 | [X] US-R4 | As a developer, I want a ProductMapper so that Product DTO mapping is reusable. |
-| US-R5     | As a developer, I want AOP-based request logging so that service execution can be traced. |
-| US-R6     | As a developer, I want execution time logging so that slow operations can be identified. |
+| [X] US-R5 | As a developer, I want AOP-based request logging so that service execution can be traced. |
+| [X] US-R6 | As a developer, I want execution time logging so that slow operations can be identified. |
 | US-R7     | As a business owner, I want soft-delete support for products so that historical orders remain valid. |
-| US-R8     | As a developer, I want large service methods decomposed into smaller methods so that business logic is easier to maintain. |
+| [X] US-R8 | As a developer, I want large service methods decomposed into smaller methods so that business logic is easier to maintain. |
 | US-R9     | As a developer, I want API documentation and architecture diagrams so that onboarding becomes easier. |
 
 ---
@@ -204,6 +204,7 @@ This phase focuses on writing code like an experienced backend engineer rather t
 - KISS
 - DRY
     - Used a global exception handler to reduce multiple handlers in different controllers.
+    - Using mappers to reduce code duplication
 - YAGNI
 
 ## Design Patterns
@@ -230,4 +231,96 @@ This phase focuses on writing code like an experienced backend engineer rather t
 - Order → OrderItem (One-to-Many)
 - Product → CartItem (Many-to-One)
 - Product → OrderItem (Many-to-One)
+
+---
+
+# 🧪 Phase 1.6 - Automated Testing
+
+## 🎯 Goal
+
+Add automated tests to protect existing business logic and make future refactoring safer.
+
+Phase 1 and Phase 1.5 were validated primarily through manual API testing. This phase introduces repeatable automated tests that can be run locally with Maven.
+
+---
+
+## 🧾 User Stories for Phase 1.6
+
+| ID  | User Story                                                                                                                                                  |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| T-1 | As a developer, I want unit tests for `ProductServiceImpl` so that product operations can be verified without manually calling APIs.                        |
+| T-2 | As a developer, I want unit tests for `CurrentUserServiceImpl` so that authenticated-user lookup behavior is verified.                                      |
+| T-3 | As a developer, I want unit tests for `CartServiceImpl` so that cart business rules and inventory validation are protected.                                 |
+| T-4 | As a developer, I want unit tests for `OrderServiceImpl` so that checkout behavior, payment processing, inventory updates, and cart clearing are protected. |
+| T-5 | As a developer, I want mapper unit tests so that entity-to-DTO conversion remains correct after future entity changes.                                      |
+| T-6 | As a developer, I want integration tests for critical API flows so that controllers, security, services, and persistence work together correctly.           |
+
+---
+
+## 📚 Testing Stack
+
+* JUnit 5
+* Mockito
+* Spring Boot Test
+* MockMvc
+* Testcontainers *(planned for database-backed integration tests)*
+
+---
+
+## 🧪 Testing Strategy
+
+### Unit Tests
+
+Unit tests will focus on service-layer business logic. Dependencies such as repositories, mappers, payment strategies, and `CurrentUserService` will be mocked using Mockito.
+
+Initial unit-test coverage will include:
+
+* Product creation, retrieval, update, deletion, and product-not-found behavior.
+* Current user retrieval when the authenticated user exists or does not exist.
+* Adding new and existing products to a cart.
+* Cart inventory validation, item removal, and cart clearing.
+* Successful order placement.
+* Empty-cart order failure.
+* Insufficient-inventory order failure.
+* Payment failure behavior.
+* Order total calculation, inventory reduction, and cart clearing after successful checkout.
+
+### Integration Tests
+
+Integration tests will validate critical end-to-end API flows using Spring Boot Test and MockMvc.
+
+Planned flows include:
+
+1. Register a user and log in.
+2. Create a product as an admin.
+3. Add a product to a cart.
+4. Place an order.
+5. Verify inventory reduction and order history.
+
+---
+
+## ▶️ Running Tests
+
+Run all tests:
+
+```bash
+./mvnw test
+```
+
+Run the application:
+
+```bash
+./mvnw spring-boot:run
+```
+
+---
+
+## 📌 Testing Principles
+
+* Tests should verify behavior, not implementation details.
+* Each test should follow the Arrange–Act–Assert pattern.
+* Unit tests should be fast and independent of a real database.
+* Integration tests should cover only high-value end-to-end flows.
+* Every bug fixed in the future should ideally receive a regression test.
+
 

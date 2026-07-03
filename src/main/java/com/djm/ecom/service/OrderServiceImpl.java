@@ -30,11 +30,7 @@ public class OrderServiceImpl implements OrderService {
     private final CurrentUserService currentUserService;
     private final OrderMapper orderMapper;
 
-    @Override
-    @Transactional
-    public OrderResponse placeOrder(OrderCreationRequest orderCreationRequest) {
-
-        User user = currentUserService.getCurrentUser();
+    private Cart getValidatedCart(User user) {
         Cart cart = cartRepository.findByUser(user).orElseThrow(() ->
                 new CartNotFoundException("Cart not found for this user"));
         if (cart.getCartItemList().isEmpty())
@@ -43,11 +39,16 @@ public class OrderServiceImpl implements OrderService {
             if (cartItem.getQuantity() > cartItem.getProduct().getQuantity())
                 throw new NotEnoughQuantityException("Not enough quantity in inventory");
         }
+        return cart;
+
+    }
+
+    private Order createOrder(OrderCreationRequest orderCreationRequest, User user, Cart cart) {
+        BigDecimal totalAmount = BigDecimal.ZERO;
         Order order = Order.builder()
                 .paymentMethod(orderCreationRequest.getPaymentMethod())
                 .user(user)
                 .build();
-        BigDecimal totalAmount = BigDecimal.ZERO;
         for (CartItem cartItem : cart.getCartItemList()) {
             OrderItem orderItem = OrderItem.builder()
                     .order(order)
@@ -58,13 +59,30 @@ public class OrderServiceImpl implements OrderService {
             order.getOrderItemList().add(orderItem);
             totalAmount = totalAmount.add(cartItem.getProduct().getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())));
         }
-        PaymentStrategy paymentStrategy = paymentStrategyFactory.
-                getStrategy(orderCreationRequest.getPaymentMethod());
         order.setTotalAmount(totalAmount);
-        paymentStrategy.processPayment(totalAmount);
+        return order;
+
+    }
+
+    private void updateInventory(Order order) {
         for (OrderItem orderItem : order.getOrderItemList()) {
             orderItem.getProduct().setQuantity(orderItem.getProduct().getQuantity() - orderItem.getQuantity());
         }
+    }
+
+    @Override
+    @Transactional
+    public OrderResponse placeOrder(OrderCreationRequest orderCreationRequest) {
+
+        User user = currentUserService.getCurrentUser();
+        Cart cart = getValidatedCart(user);
+        Order order = createOrder(orderCreationRequest, user, cart);
+
+        PaymentStrategy paymentStrategy = paymentStrategyFactory.
+                getStrategy(orderCreationRequest.getPaymentMethod());
+        paymentStrategy.processPayment(order.getTotalAmount());
+
+        updateInventory(order);
         orderRepository.save(order);
         cart.getCartItemList().clear();
         cartRepository.save(cart);
